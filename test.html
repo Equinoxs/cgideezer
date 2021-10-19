@@ -1,0 +1,39 @@
+<script type="text/javascript">
+var ray={
+ajax:function(st)
+    {
+        this.show('load');
+    },
+show:function(el)
+    {
+        this.getID(el).style.display='';
+    },
+getID:function(el)
+    {
+        return document.getElementById(el);
+    }
+}
+</script>
+<style type="text/css">
+#load{
+position:absolute;
+z-index:1;
+border:3px double #999;
+background:#f7f7f7;
+width:300px;
+height:300px;
+margin-top:-150px;
+margin-left:-150px;
+top:50%;
+left:50%;
+text-align:center;
+line-height:300px;
+font-family:"Trebuchet MS", verdana, arial,tahoma;
+font-size:18pt;
+}
+</style>
+<div id="load" style="display:none;">Loading... Please wait<br/><img src="loading.gif"></div>
+<form action="dl_deezer.sh" method="get" onsubmit="return ray.ajax()">
+<input type="text" value="Test" name="recherche">
+<input type="submit" value="Search">
+</form>
